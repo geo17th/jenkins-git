@@ -1,9 +1,10 @@
 pipeline {
     agent any
-    steps{
         stages {
-            stage('SCM'){
-                echo 'Gathering code from github'
+            stage('SCM') {
+                steps {    
+                    echo 'Gathering code from github'
+                }
             }
             stage('Build') {
                 steps {
@@ -13,7 +14,7 @@ pipeline {
                         ls -lah
                     '''
                 }
+            
             }
         }
-    }
 }
